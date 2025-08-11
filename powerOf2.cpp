@@ -1,15 +1,25 @@
 #include <iostream>
-using namespace std;
+
+
+bool isPowerOfTwo(int num) {
+    return num > 0 && (num & (num - 1)) == 0;
+}
+
+
+int getNumber() {
+    int num;
+    std::cout << "Enter a number: ";
+    std::cin >> num;
+    return num;
+}
 
 int main() {
-    int num;
-    cout << "Enter a number: ";
-    cin >> num;
+    int num = getNumber();
 
-    if (num > 0 && (num & (num - 1)) == 0) {
-        cout << num << " is a power of 2." <<endl;
+    if (isPowerOfTwo(num)) {
+        std::cout << num << " is a power of 2." << std::endl;
     } else {
-        cout << num << " is NOT a power of 2." <<endl;
+        std::cout << num << " is NOT a power of 2." << std::endl;
     }
 
     return 0;
